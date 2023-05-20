@@ -18,12 +18,10 @@ const insertItem = async (event) => {
     createdAt,
     itemStatus: false
   }
-
   await dynamodb.put({
     TableName: "ItemTable",
     Item: newItem
   }).promise()
-
   return {
     statusCode: 200,
     body: JSON.stringify(newItem),

@@ -6,7 +6,7 @@ const hello = async (event) => {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: "Go Serverless v2.0! Your function executed successfully!",
+        message: "Teste Joao successfully!",
         input: event,
       },
       null,
@@ -14,7 +14,6 @@ const hello = async (event) => {
     ),
   };
 };
-
 
 module.exports = {
     handler:hello

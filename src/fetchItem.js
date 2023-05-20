@@ -5,9 +5,7 @@ const fetchItem = async (event) => {
   //module.exports.fetchItem = async (event) => {
 
     const dynamodb = new AWS.DynamoDB.DocumentClient();
-
     const {id} = event.pathParameters
-
     let item;
 
     try {
@@ -15,13 +13,10 @@ const fetchItem = async (event) => {
             TableName: "ItemTable",
             Key: {id}
         }).promise();
-
         item = result.Item;
-
     } catch (error) {
         console.log(error)
     }
-
     return {
         statusCode: 200,
         body: JSON.stringify(item),
